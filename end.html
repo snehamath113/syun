@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Message</title>
+
+<style>
+body{
+    margin:0;
+    background:purple;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+}
+
+/* Typing text */
+.message{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:typing 4s steps(25,end) forwards;
+}
+
+/* Bouquet appears after text */
+.bouquet{
+    font-size:80px;
+    margin-top:40px;
+    opacity:0;
+    animation:
+        showBouquet 1s forwards 4.2s,
+        float 2s ease-in-out infinite 5.2s,
+        glow 1.5s ease-in-out infinite 5.2s;
+}
+
+@keyframes typing{
+    from{width:0;}
+    to{width:100%;}
+}
+
+@keyframes showBouquet{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+@keyframes glow{
+    0%,100%{
+        text-shadow:0 0 10px pink,
+                    0 0 20px pink,
+                    0 0 30px white;
+    }
+    50%{
+        text-shadow:0 0 20px white,
+                    0 0 40px pink,
+                    0 0 60px white;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="message">
+    Wahhh...! No wonder YOU ARE GAY!!
+</div>
+
+<div class="bouquet">
+    💐
+</div>
+
+</body>
+</html>
